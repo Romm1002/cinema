@@ -1,0 +1,99 @@
+### FILMS
+GET http://localhost:3002/api/films
+
+###
+POST http://localhost:3002/api/films
+Content-Type: application/json
+
+{
+    "id": 1,
+    "title": "Film1",
+    "releaseYear": 2000,
+    "genre": "Genre1",
+    "directors": {
+        "name": "Dir1", 
+        "birthDate": "10/02/2002",
+        "biography": "bio"
+    }
+}
+
+###
+PUT http://localhost:3002/api/films/1
+Content-Type: application/json
+
+{
+    "title": "FilmRename"
+}
+
+###
+DELETE http://localhost:3002/api/films/1
+
+
+
+
+### RÉAS
+GET http://localhost:3002/api/realisateurs
+
+###
+POST http://localhost:3002/api/realisateurs
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Rea1",
+    "birthDate": "10/02/2002",
+    "biography": "bio"
+}
+
+###
+PUT http://localhost:3002/api/realisateurs/1
+Content-Type: application/json
+
+{
+    "name": "ReaRename"
+}
+
+###
+DELETE http://localhost:3002/api/realisateurs/1
+
+
+
+
+### SEANCES
+GET http://localhost:3002/api/seances
+
+###
+POST http://localhost:3002/api/seances
+Content-Type: application/json
+
+{
+    "id": 1,
+    "film": {
+        "id": 1,
+        "title": "Film1", 
+        "releaseYear": 2002, 
+        "genre": "Genre1", 
+        "directors": {
+            "id": 1,
+            "name": "Rea1", 
+            "birthDate": 1889, 
+            "biography": "bio"
+        }
+    },
+    "date": 2024, 
+    "time": "1hour", 
+    "availableSeats": 200
+}
+
+###
+PUT http://localhost:3002/api/seances/1
+Content-Type: application/json
+
+{
+    "film": {
+        "title": "FilmRename"
+    }
+}
+
+###
+DELETE http://localhost:3002/api/seances/1
